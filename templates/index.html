@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Image/Text Sentiment Analysis</title>
+</head>
+<body>
+    <h1>📰 News Image/Text Sentiment Analysis</h1>
+    <p>Upload an image or enter text to analyze its sentiment!</p>
+
+    <form method="post" enctype="multipart/form-data">
+        <label for="user_text">Enter text:</label>
+        <textarea name="user_text" rows="4" cols="50" placeholder="Type text here..."></textarea>
+        <br><br>
+        
+        <label for="image_file">Or, upload an image:</label>
+        <input type="file" name="image_file" accept=".jpg,.jpeg,.png">
+        <br><br>
+
+        <button type="submit">Analyze Sentiment</button>
+    </form>
+
+    {% if extracted_text %}
+        <h2>📝 Extracted Text:</h2>
+        <p>{{ extracted_text }}</p>
+
+        <h2>✨ Sentiment Analysis Result:</h2>
+        {% if sentiment == 'positive' %}
+            <p><strong>Sentiment:</strong> 😄 Positive</p>
+        {% elif sentiment == 'negative' %}
+            <p><strong>Sentiment:</strong> 😞 Negative</p>
+        {% else %}
+            <p><strong>Sentiment:</strong> 😐 Neutral</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>

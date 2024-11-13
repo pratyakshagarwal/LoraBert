@@ -19,7 +19,7 @@ python -m venv env
 ```
 - Activate the enviorment
 ```
-myenv\Scripts\activate
+env\Scripts\activate
 ```
 - Run this script 
 ```

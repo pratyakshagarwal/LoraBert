@@ -1,0 +1,9 @@
+torch
+pandas
+sklearn
+seaborn
+torchmetrics
+matlplotlib
+tokenizers
+transformers
+flask
